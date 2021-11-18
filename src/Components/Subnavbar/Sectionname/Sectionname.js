@@ -5,7 +5,11 @@ import './Sectionname.css'
 const Sectionname = ({ clase }) => {
     return (
 
-        <span className='Sectionname_subnavar'>{clase}</span>
+        <div className='Sectionname_div_subnavbar'>
+            <span className='Sectionname_subnavbar'>{clase}</span>
+            <span className='Sectionname_subnavbar_selector'></span>
+        </div>
+
 
     )
 }
