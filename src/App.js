@@ -1,12 +1,15 @@
+import { Route, Routes } from 'react-router';
 import './App.css';
-import Navbar from './Components/Navbar/Navbar';
-import Subnavbar from './Components/Subnavbar/Subnavbar';
+import Calendar from './pages/Calendar';
+import Home from './pages/Home';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Subnavbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/calendar" element={<Calendar />} />
+      </Routes>
     </div>
   );
 }
