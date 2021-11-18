@@ -1,5 +1,18 @@
-.Sectionname_subnavar {
-  padding-bottom: 0.3rem;
+.Sectionname_subnavbar {
   padding-top: 0.2rem;
-  margin: 0rem 1.5rem;
+  margin: 0.1rem 1.5rem;
+}
+
+.Sectionname_div_subnavbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Sectionname_subnavbar_selector {
+  border: 2px solid #c4161c;
+  border-radius: 10rem;
+  width: 4rem;
+  background-color: #c4161c;
+  margin: 0rem;
 }
