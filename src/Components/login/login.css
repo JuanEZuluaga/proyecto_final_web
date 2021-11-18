@@ -1,0 +1,10 @@
+.content_input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: sans-serif;
+    color: #9E9E9E;
+  }
+  #image_init{
+    max-width: 50%;
+  }
