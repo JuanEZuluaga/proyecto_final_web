@@ -1,12 +1,14 @@
 import React from "react";
 import { BsFillBellFill } from 'react-icons/bs';
 
+import './Userinfo.css'
+
 const Userinfo = ({ username, userimg }) => {
     return (
-        <div>
+        <div className='Userinfo_navbar'>
             <BsFillBellFill></BsFillBellFill>
-            <span> {username}</span>
-            <img src={userimg} className='Userimg' alt='User img' />
+            <span className='welcome_navbar'> {username}</span>
+            <img src={userimg} className='Userimg_navbar' alt='User img' />
         </div>
     )
 }

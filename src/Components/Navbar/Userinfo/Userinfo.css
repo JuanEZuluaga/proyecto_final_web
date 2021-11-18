@@ -1,0 +1,17 @@
+.Userinfo_navbar {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #ffff;
+}
+
+.welcome_navbar {
+  margin: 0rem 1rem;
+}
+
+.Userimg_navbar {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+}
