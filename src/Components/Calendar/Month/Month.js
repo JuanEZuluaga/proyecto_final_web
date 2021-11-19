@@ -6,7 +6,7 @@ function Month({ month }) {
             {month.map((row, i) => (
                 <Fragment key={i}>
                     {row.map((day, idx)=> (
-                        <Day day={day} key={idx}/>
+                        <Day day={day} key={idx} rowIdx={i}/>
                     ))}
                 </Fragment>
             ))}
