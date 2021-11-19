@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import GlobalContext from '../../../context/GlobalContext'
 import { TimePickerComponent } from "@syncfusion/ej2-react-calendars"
+import reactDom from 'react-dom'
 
 const labelsClasses = ["indigo", "gray", "green", "blue", "red", "purple"]
 export default function EventModal() {
@@ -8,7 +9,8 @@ export default function EventModal() {
     const [title, setTitle] = useState(selectedEvent ? selectedEvent.title : "")
     const [description, setDescription] = useState(selectedEvent ? selectedEvent.description : "")
     const [selectedLabel, setSelectedLabel] = useState(selectedEvent ? labelsClasses.find((lbl) => lbl === selectedEvent.label) : labelsClasses[0])
-
+ 
+    
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -17,6 +19,7 @@ export default function EventModal() {
             description,
             label: selectedLabel,
             day: daySelected.valueOf(),
+            
             id: selectedEvent ? selectedEvent.id : Date.now()
         }
         if (selectedEvent) {
@@ -24,7 +27,7 @@ export default function EventModal() {
         } else {
             dispatchCalEvent({ type: 'push', payload: calendarEvent })
         }
-
+      
         setShowEventModal(false)
     }
 
@@ -58,8 +61,8 @@ export default function EventModal() {
                    
                         <p className="text-left normal-case">{daySelected.format("dddd, MMMM DD")}</p>
                        
-                        <TimePickerComponent placeholder="Hora Inicio" />
-                        <TimePickerComponent placeholder="Hora Fin" />
+                        <TimePickerComponent id="horaI" placeholder="Hora Inicio" />
+                        <TimePickerComponent id="horaF" placeholder="Hora Fin" />
                         <input type="text"
                             name="descrpition"
                             placeholder="Añadir descripción"
