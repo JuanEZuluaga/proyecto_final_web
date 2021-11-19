@@ -46,7 +46,7 @@ export default function EventModal() {
 
                 </header>
                 <div className="p-5">
-                    <div className="grid grid-cols-1/5 items-end gap-y-7">
+                    <div className="grid grid-cols-1/10 items-end gap-y-7">
                         <div></div>
                         <input type="text"
                             name="title"
@@ -55,9 +55,7 @@ export default function EventModal() {
                             required
                             className="pt-3 border-0 text-gray-600 text-xl font-semibold pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:border-red-700"
                             onChange={(e) => setTitle(e.target.value)} />
-                        <span className="material-icons-outlined text-gray-400">
-                            schedule
-                        </span>
+                   
                         <p className="text-left normal-case">{daySelected.format("dddd, MMMM DD")}</p>
                        
                         <TimePickerComponent placeholder="Hora Inicio" />
