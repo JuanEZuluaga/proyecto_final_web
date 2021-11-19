@@ -1,17 +1,16 @@
-import User from '@heroicons/react/outline/UserIcon'
+
 const CustomInput = (props) => {
 
     return (
-        <div>
-            <label htmlFor="user-name" className="sr-only">
-                <User className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
-            </label>
-            <input
-                id={props.id}
-                name={props.name}
-                type={props.type}
-                required
-                className={`
+
+        <input
+            id={props.id}
+            name={props.name}
+            type={props.type}
+            required
+            onChange={props.onChange}
+            value={props.value}
+            className={`
                 appearance-none
                 max-w-nonerelative
                 block w-full
@@ -27,9 +26,8 @@ const CustomInput = (props) => {
                 focus:z-10
                 sm:text-base
                 `}
-                placeholder={props.placeholder}
-            />
-        </div>
+            placeholder={props.placeholder}
+        />
     )
 }
 
