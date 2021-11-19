@@ -30,7 +30,7 @@ const Login = () => {
 
     return (
         <>
-            {loggedIn ? <Navigate to='/Home' />
+            {loggedIn ? <Navigate to='/home' />
                 :
                 <div className='flex flex-row h-screen overflow-hiddedn'>
 
