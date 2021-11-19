@@ -66,7 +66,7 @@ export default function SmallCalendar() {
                 ))}
                 {currentMonth.map((row, i) =>(
                     <Fragment key={i}>
-                        {row.map((day,idx)=>(
+                        {row.map(( day,idx)=>(
                             <button key={idx} onClick={() => {
                                 setSmallCalendarMonth(currentMonthIdx)
                                 setDaySelected(day)
