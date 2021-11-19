@@ -3,6 +3,7 @@ import CustomInput from '../Components/Forms/Inputs/CustomInput'
 import login_img from '../img/login.png'
 import logo from '../img/logo_uao.png'
 const Login = () => {
+    
     return (
         <div className='flex flex-row h-screen overflow-hidden'>
 
