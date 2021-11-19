@@ -5,9 +5,10 @@ import Labels from './Labels/Labels'
 function Sidebar() {
     return (
         <aside className="border p-5 w-64">
-            <CreateEventButton/>
-            <SmallCalendar/>
-            <Labels className="justify-start"/>
+            <CreateEventButton />
+            <SmallCalendar />
+            <Labels />
+
         </aside>
     )
 }

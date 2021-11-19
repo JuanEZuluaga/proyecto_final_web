@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import GlobalContext from '../../../context/GlobalContext'
+import { TimePickerComponent } from "@syncfusion/ej2-react-calendars"
 
 const labelsClasses = ["indigo", "gray", "green", "blue", "red", "purple"]
 export default function EventModal() {
@@ -16,7 +17,7 @@ export default function EventModal() {
             description,
             label: selectedLabel,
             day: daySelected.valueOf(),
-            id: selectedEvent ? selectedEvent.id :Date.now()
+            id: selectedEvent ? selectedEvent.id : Date.now()
         }
         if (selectedEvent) {
             dispatchCalEvent({ type: 'update', payload: calendarEvent })
@@ -44,7 +45,7 @@ export default function EventModal() {
                     </div>
 
                 </header>
-                <div className="p-3">
+                <div className="p-5">
                     <div className="grid grid-cols-1/5 items-end gap-y-7">
                         <div></div>
                         <input type="text"
@@ -57,7 +58,10 @@ export default function EventModal() {
                         <span className="material-icons-outlined text-gray-400">
                             schedule
                         </span>
-                        <p>{daySelected.format("dddd, MMMM DD")}</p>
+                        <p className="text-left normal-case">{daySelected.format("dddd, MMMM DD")}</p>
+                       
+                        <TimePickerComponent placeholder="Hora Inicio" />
+                        <TimePickerComponent placeholder="Hora Fin" />
                         <span className="material-icons-outlined text-gray-400">
                             segment
                         </span>
@@ -81,6 +85,7 @@ export default function EventModal() {
                                 </span>
                             ))}
                         </div>
+
 
                     </div>
                 </div>
