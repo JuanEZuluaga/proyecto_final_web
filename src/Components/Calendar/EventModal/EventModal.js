@@ -2,28 +2,36 @@ import React, { useContext, useRef, useState } from 'react'
 import GlobalContext from '../../../context/GlobalContext'
 import { TimePickerComponent } from "@syncfusion/ej2-react-calendars"
 import reactDom from 'react-dom'
+import dayjs from 'dayjs'
+require('dayjs/locale/es')
 
 const labelsClasses = ["indigo", "gray", "green", "blue", "red", "purple"]
 export default function EventModal() {
+ 
     const { setShowEventModal, daySelected, dispatchCalEvent, selectedEvent } = useContext(GlobalContext)
     const [title, setTitle] = useState(selectedEvent ? selectedEvent.title : "")
     const [description, setDescription] = useState(selectedEvent ? selectedEvent.description : "")
     const [selectedLabel, setSelectedLabel] = useState(selectedEvent ? labelsClasses.find((lbl) => lbl === selectedEvent.label) : labelsClasses[0])
+    const [startHour, setStartHour] = useState(selectedEvent ? selectedEvent.startHour : "")
+    const [endHour, setEndHour] = useState(selectedEvent ? selectedEvent.endHour : "")
+   
+    //const [totalDayHour, setTotalDayHour] = useState(selectedEvent ? selectedEvent.totalDayHour : "")
 
     const horaInicio = useRef('')
     const horaFin = useRef('')
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(horaInicio.current.value)
-        console.log(horaFin.current.value)
-
+       /*startHour: dayjs(horaInicio.current.value).format("HH:mm A"),
+            endHour: dayjs(horaFin.current.value).format("HH:mm A"),*/
         const calendarEvent = {
             title,
             description,
             label: selectedLabel,
             day: daySelected.valueOf(),
-            
+            startHour,
+            endHour,
+            totalDayHour,
             id: selectedEvent ? selectedEvent.id : Date.now()
         }
         if (selectedEvent) {
@@ -34,7 +42,8 @@ export default function EventModal() {
       
         setShowEventModal(false)
     }
-
+   
+    const totalDayHour = new Date(endHour).getHours() - new Date(startHour).getHours()
     return (
         <div className="h-screen w-full fixed left-0 top-0 flex justify-center items-center">
             <form className="bg-white rounded-lg shadow-2xl w-1/4">
@@ -65,13 +74,10 @@ export default function EventModal() {
                    
                         <p className="text-left normal-case">{daySelected.format("dddd, MMMM DD")}</p>
                        
-                        <TimePickerComponent ref={horaInicio} placeholder="Hora Inicio" />
-                        <TimePickerComponent ref={horaFin} placeholder="Hora Fin" />
-                        <span className="material-icons-outlined text-gray-400">
-                            segment
-                        </span>
-
-                        <input type="text"
+                        <TimePickerComponent value={startHour} ref={horaInicio}  onChange={(e) => setStartHour(e.target.value)} placeholder="Hora Inicio" />
+                        <TimePickerComponent value={endHour} ref={horaFin} onChange={(e) => setEndHour(e.target.value)} placeholder="Hora Fin" />
+                        <p className="pt-3 border-0 text-gray-600 pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:border-red-700">{totalDayHour ? `Horas trabajadas: ${totalDayHour}` : "No hay horas registradas"}</p>
+                          <input type="text"
                             name="descrpition"
                             placeholder="Añadir descripción"
                             value={description}
