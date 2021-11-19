@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import GlobalContext from '../../../context/GlobalContext'
 import { TimePickerComponent } from "@syncfusion/ej2-react-calendars"
 
@@ -9,9 +9,14 @@ export default function EventModal() {
     const [description, setDescription] = useState(selectedEvent ? selectedEvent.description : "")
     const [selectedLabel, setSelectedLabel] = useState(selectedEvent ? labelsClasses.find((lbl) => lbl === selectedEvent.label) : labelsClasses[0])
 
+    const horaInicio = useRef('')
+    const horaFin = useRef('')
 
     function handleSubmit(e) {
         e.preventDefault()
+        console.log(horaInicio.current.value)
+        console.log(horaFin.current.value)
+
         const calendarEvent = {
             title,
             description,
@@ -58,8 +63,8 @@ export default function EventModal() {
                    
                         <p className="text-left normal-case">{daySelected.format("dddd, MMMM DD")}</p>
                        
-                        <TimePickerComponent placeholder="Hora Inicio" />
-                        <TimePickerComponent placeholder="Hora Fin" />
+                        <TimePickerComponent ref={horaInicio} placeholder="Hora Inicio" />
+                        <TimePickerComponent ref={horaFin} placeholder="Hora Fin" />
                         <span className="material-icons-outlined text-gray-400">
                             segment
                         </span>
