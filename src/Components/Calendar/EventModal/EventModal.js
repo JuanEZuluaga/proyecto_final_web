@@ -46,7 +46,7 @@ export default function EventModal() {
 
                 </header>
                 <div className="p-5">
-                    <div className="grid grid-cols-1/5 items-end gap-y-7">
+                    <div className="grid grid-cols-1/6 items-end gap-y-7">
                         <div></div>
                         <input type="text"
                             name="title"
@@ -60,9 +60,6 @@ export default function EventModal() {
                        
                         <TimePickerComponent placeholder="Hora Inicio" />
                         <TimePickerComponent placeholder="Hora Fin" />
-                        <span className="material-icons-outlined text-gray-400">
-                            segment
-                        </span>
                         <input type="text"
                             name="descrpition"
                             placeholder="Añadir descripción"
@@ -70,9 +67,7 @@ export default function EventModal() {
                             required
                             className="pt-3 border-0 text-gray-600 pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:border-red-700"
                             onChange={(e) => setDescription(e.target.value)} />
-                        <span className="material-icons-outlined text-gray-400">
-                            bookmark_border
-                        </span>
+                        
                         <div className="flex gap-x-2">
                             {labelsClasses.map((lblClass, i) => (
                                 <span key={i} onClick={() => setSelectedLabel(lblClass)} className={`bg-${lblClass}-500 w-6 h-6 rounded-full flex items-center justify-center cursor-pointer`}>
