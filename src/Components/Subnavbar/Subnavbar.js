@@ -6,7 +6,7 @@ import './Subnavbar.css'
 const Subnavbar = () => {
     return (
 
-        <div className='Subnavbarbg'>
+        <div className='Subnavbarbg space-x-4'>
             <Sectionname clase='Inicio' route='/home'/>
             <Sectionname clase='Reportes' route='/reports'/>
         </div>
