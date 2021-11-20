@@ -7,8 +7,8 @@ const Subnavbar = () => {
     return (
 
         <div className='Subnavbarbg'>
-            <Sectionname clase='Inicio' />
-            <Sectionname clase='Reportes' />
+            <Sectionname clase='Inicio' route='/home'/>
+            <Sectionname clase='Reportes' route='/reports'/>
         </div>
 
     )
