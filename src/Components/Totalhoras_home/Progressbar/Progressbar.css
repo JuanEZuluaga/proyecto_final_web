@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+.progress {
+  display: flex;
+  background-color: #d1d1d1;
+  border-radius: 20px;
+  position: relative;
+  margin: 1rem;
+  width: 65%;
+  height: 1.5rem;
+  box-sizing: border-box;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  align-items: center;
+}
+
+.progress-done {
+  border-radius: 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 0;
+  opacity: 0;
+  transition: 1s ease 0.3s;
+  box-sizing: border-box;
+  background-color: #c4161c;
+}
+
+.progress-faltante {
+  margin-right: 1rem;
+}
