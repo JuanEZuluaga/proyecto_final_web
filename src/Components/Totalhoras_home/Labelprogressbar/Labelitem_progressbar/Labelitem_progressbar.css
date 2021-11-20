@@ -1,0 +1,22 @@
+.labelitem_progressbar_div {
+  display: flex;
+  align-items: center;
+  margin: 0rem 1rem;
+}
+
+.labelitem_progressbar_icon1 {
+  font-size: 1rem;
+  color: #c4161c;
+  margin: 0rem 0.3rem;
+}
+
+.labelitem_progressbar_icon2 {
+  font-size: 1rem;
+  color: #d1d1d1;
+  margin: 0rem 0.3rem;
+}
+
+.labelitem_progressbar_text {
+  font-size: 0.7rem;
+  color: #363636;
+}
