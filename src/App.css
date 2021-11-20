@@ -3,8 +3,10 @@
 @import "../node_modules/@syncfusion/ej2-popups/styles/material.css";
 @import "../node_modules/@syncfusion/ej2-lists/styles/material.css";
 @import "../node_modules/@syncfusion/ej2-react-calendars/styles/material.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 body {
   background-color: #f5f6f8;
+  font-family: 'Roboto', sans-serif;
 }
 
 .App {
