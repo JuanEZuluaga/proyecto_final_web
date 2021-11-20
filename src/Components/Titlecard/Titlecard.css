@@ -10,14 +10,15 @@
 .Titlecard_h2section {
   margin: 0.4rem 0rem;
   font-weight: bold;
-  color: #363636;
-  font-size: 1.1rem;
+  color: #6b7280;
+  font-size: 1.5rem;
 }
 
 .Titlecard_spansection {
   border: 0.1px solid #d1d1d1;
   background-color: #c4161c;
   width: 97%;
+  
 }
 
 .Titlecard_secdiv {
