@@ -8,7 +8,7 @@ export default function ReportState() {
         setReportSent((prevState) => !prevState)
     }
     function allStorage() {
-        if(localStorage.getItem!== null){
+        if(!localStorage.getItem){
             const values = JSON.parse(localStorage.getItem('savedEvents'))
 
             const totalHours = values.reduce((prev, cur) => {
